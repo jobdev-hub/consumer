@@ -1,4 +1,4 @@
-package com.jobdev.consumer.web.response;
+package com.jobdev.consumer.web.client.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,9 +9,9 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class PlanetListSwapiReponse {
+public class SwapiPlanetResponse {
     Integer count;
     String next;
     String previous;
-    List<PlanetSwapiReponse> results;
+    List<SwapiPlanet> results;
 }

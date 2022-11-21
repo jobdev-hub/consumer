@@ -14,3 +14,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+
+swapi:
+  url: 'https://swapi.dev/api/'
+
+cron:
+  planet: '*/30 * * * * *'

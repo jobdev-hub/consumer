@@ -1,4 +1,4 @@
-package com.jobdev.consumer.web.response;
+package com.jobdev.consumer.web.client.model;
 
 import com.jobdev.consumer.domain.entity.Planet;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class PlanetSwapiReponse {
+public class SwapiPlanet {
     private String url;
     private String name;
     private String climate;

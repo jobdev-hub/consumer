@@ -1,4 +1,4 @@
-package com.jobdev.consumer.web.client.model;
+package com.jobdev.consumer.web.client.swapi.model;
 
 import com.jobdev.consumer.domain.entity.Planet;
 import lombok.Getter;

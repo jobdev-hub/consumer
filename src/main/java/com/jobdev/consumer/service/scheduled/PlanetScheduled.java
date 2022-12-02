@@ -1,7 +1,7 @@
-package com.jobdev.consumer.domain.scheduled;
+package com.jobdev.consumer.service.scheduled;
 
 import com.jobdev.consumer.domain.repository.PlanetRepository;
-import com.jobdev.consumer.web.client.SwapiClient;
+import com.jobdev.consumer.web.client.swapi.SwapiClient;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;

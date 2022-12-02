@@ -1,7 +1,7 @@
-package com.jobdev.consumer.web.client;
+package com.jobdev.consumer.web.client.swapi;
 
-import com.jobdev.consumer.web.client.model.SwapiPlanetResponse;
-import com.jobdev.consumer.web.client.model.SwapiPlanet;
+import com.jobdev.consumer.web.client.swapi.model.SwapiPlanet;
+import com.jobdev.consumer.web.client.swapi.model.SwapiPlanetResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

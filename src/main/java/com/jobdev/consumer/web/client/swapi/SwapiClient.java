@@ -1,5 +1,6 @@
 package com.jobdev.consumer.web.client.swapi;
 
+import com.jobdev.consumer.web.client.swapi.model.SwapiPeople;
 import com.jobdev.consumer.web.client.swapi.model.SwapiPlanet;
 import com.jobdev.consumer.web.client.swapi.model.SwapiPlanetResponse;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -14,5 +15,8 @@ public interface SwapiClient {
 
     @GetMapping("planets/{id}")
     SwapiPlanet getPlanetById(@PathVariable String id);
+
+    @GetMapping("people/{id}")
+    SwapiPeople getPeople(@PathVariable String id);
 
 }

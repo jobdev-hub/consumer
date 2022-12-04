@@ -13,12 +13,12 @@ public class SwapiRemoveLoadScheduled {
 
     private final PlanetRepository planetRepository;
 
-    @Scheduled(cron = "${cron.planet}")
+    @Scheduled(cron = "${cron.swapi-remove-load}")
     public void chargePlanets() {
         log.info("Starting scheduled task [Remove Load]");
         var planets = planetRepository.findAll();
         if (!planets.isEmpty()) {
-            planetRepository.deleteById(planets.get(0).getId());
+            planetRepository.deleteById(planets.get(0).getUuid());
         }
     }
 }

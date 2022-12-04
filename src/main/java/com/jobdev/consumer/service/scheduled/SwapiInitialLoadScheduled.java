@@ -19,32 +19,28 @@ public class SwapiInitialLoadScheduled {
     private final PlanetRepository planetRepository;
     private final PeopleRepository peopleRepository;
 
-    @Scheduled(cron = "${cron.planet}")
-    public void chargePlanets() {
+    @Scheduled(cron = "${cron.swapi-initial-load}")
+    public void loadPlanets() {
         log.info("Starting scheduled task [Initial Load]");
         if (planetRepository.count() == 0) {
             var page = 1L;
             var hasNext = true;
             while (hasNext) {
-
                 var response = swapiClient.getPlanets(page);
-                var results = response.getResults();
-
-                for (SwapiPlanet planetSwapiResponse : results) {
+                for (SwapiPlanet planetSwapiResponse : response.getResults()) {
                     var planet = planetSwapiResponse.toEntity();
                     if (!planetSwapiResponse.getResidents().isEmpty()) {
-                        saveResidents(planetSwapiResponse, planet);
+                        loadResidents(planetSwapiResponse, planet);
                     }
                     planetRepository.save(planet);
                 }
-
                 hasNext = response.getNext() != null;
                 page++;
             }
         }
     }
 
-    private void saveResidents(SwapiPlanet planetSwapiResponse, Planet planet) {
+    private void loadResidents(SwapiPlanet planetSwapiResponse, Planet planet) {
         for (String urlResident : planetSwapiResponse.getResidents()) {
             var people = peopleRepository.findByUrl(urlResident);
             if (people.isPresent()) {

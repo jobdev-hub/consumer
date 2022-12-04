@@ -19,4 +19,5 @@ swapi:
   url: 'https://swapi.py4e.com/api/'
 
 cron:
-  planet: '*/30 * * * * *'
+  swapi-initial-load: '*/30 * * * * *'
+  swapi-remove-load: '*/5 * * * * *'
